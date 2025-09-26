@@ -51,3 +51,36 @@
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-6px); }
 }
+.btn-portal {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #00ff00;           /* verde portal */
+  color: #000;                    /* texto negro para contraste */
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: transform .08s ease, background .15s ease, box-shadow .15s ease;
+  box-shadow: 0 0 12px rgba(0,255,0,.15);
+  width: 100%;
+}
+
+.btn-portal:hover:not(:disabled) {
+  background: #00d45e;
+  box-shadow: 0 0 18px rgba(0,255,0,.25);
+  transform: translateY(-1px);
+}
+
+.btn-portal:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-portal:disabled {
+  background: #00ff00;    /* sigue verde */
+  color: #122;            /* un poco más oscuro */
+  opacity: .55;           /* indica estado */
+  cursor: not-allowed;
+  box-shadow: none;
+}

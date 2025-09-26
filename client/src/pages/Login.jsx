@@ -44,9 +44,13 @@ export default function Login() {
           onChange={handleChange}
           required
         />
-        <button type="submit" disabled={loading}>
-          {loading ? "Cargando..." : "Entrar al portal"}
-        </button>
+        <button
+  className="btn-portal"
+  type="submit"
+  disabled={loading}
+>
+  {loading ? "Cargando..." : "Entrar al portal"}
+</button>
         <p>
           ¿Nuevo aquí? <Link to="/register">Registrarme</Link>
         </p>

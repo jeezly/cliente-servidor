@@ -53,7 +53,7 @@ export default function Login() {
       </form>
 
       {/* Fondo portal */}
-      <img src="/assets/portal.gif" alt="portal" className="portal-bg" />
+<div className="portal-bg" aria-hidden="true" />
 
       {/* Overlay error */}
       {errorMsg && (

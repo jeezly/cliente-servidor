@@ -1,14 +1,38 @@
 .login-container {
-  background: black;
-  height: 100vh;
+  background: #000;
+  min-height: 100dvh;       /* mejor que 100vh para móviles */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   font-family: "Courier New", monospace;
   color: #00ff00;
+  overflow: hidden;         /* evita que el portal sobresalga y cause scroll-blanco */
 }
 
+/* El portal como fondo controlado, sin deformarse */
+.portal-bg {
+  position: absolute;
+  inset: auto 0 0 0;        /* pegado abajo, full ancho */
+  height: clamp(160px, 28vh, 320px);   /* altura responsiva SIN estirar */
+  background-image: url("/assets/portal.gif");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain; /* no deforma el gif */
+  opacity: 0.5;
+  pointer-events: none;
+  filter: saturate(1.2) contrast(1.05);
+}
+
+/* (opcional) un degradado para que se funda con el negro */
+.login-container::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #000);
+  pointer-events: none;
+}
 .login-box {
   background: rgba(0, 0, 0, 0.7);
   padding: 30px;
@@ -18,46 +42,12 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  box-shadow: 0 0 24px rgba(0,255,0,0.1);
+  transform: translateY(0);
+  animation: floaty 4s ease-in-out infinite;
 }
 
-.login-box input {
-  background: black;
-  border: 1px solid #00ff00;
-  padding: 10px;
-  color: #00ff00;
-  outline: none;
-}
-
-.login-box button {
-  background: #00ff00;
-  border: none;
-  padding: 12px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.portal-bg {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  opacity: 0.5;
-}
-
-.error-overlay {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(0,0,0,0.85);
-  border: 2px solid red;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 3;
-  color: #ff4444;
-}
-.error-overlay img {
-  width: 80px;
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
 }

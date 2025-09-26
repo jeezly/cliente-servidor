@@ -1,0 +1,22 @@
+.welcome-container {
+  background: url("/assets/morty.png") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-box {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border: 2px solid #00ff00;
+  color: #fff;
+}
+.welcome-box button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff00ff;
+  border: none;
+  cursor: pointer;
+}

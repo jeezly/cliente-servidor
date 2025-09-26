@@ -1,0 +1,30 @@
+/* Fondo negro global del panel */
+.admin-container {
+  min-height: 100vh;
+  background: #000;
+  color: #e7ffe7;
+  padding: 20px;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Título en verde portal */
+.admin-title {
+  color: #00ff70; /* verde portal */
+  margin: 0;
+}
+
+/* Botón salir simple */
+.btn-exit {
+  background: transparent;
+  color: #e7ffe7;
+  border: 1px solid #2e2e2e;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.btn-exit:hover { background: #121212; }
